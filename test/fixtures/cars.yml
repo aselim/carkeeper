@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  datein: 2012-12-23 14:01:13
+  brand: MyString
+  carmodel: MyString
+  year: MyString
+  cc: 1
+  used: false
+  km: 1.5
+  user_id: 1
+  comment: MyText
+
+two:
+  datein: 2012-12-23 14:01:13
+  brand: MyString
+  carmodel: MyString
+  year: MyString
+  cc: 1
+  used: false
+  km: 1.5
+  user_id: 1
+  comment: MyText
