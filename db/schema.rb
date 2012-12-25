@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121223220113) do
+ActiveRecord::Schema.define(:version => 20121225100340) do
 
   create_table "cars", :force => true do |t|
     t.datetime "datein"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(:version => 20121223220113) do
     t.float    "km"
     t.integer  "user_id"
     t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_sessions", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
