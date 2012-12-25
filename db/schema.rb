@@ -28,9 +28,12 @@ ActiveRecord::Schema.define(:version => 20121223220113) do
   end
 
   create_table "users", :force => true do |t|
+    t.string   "login",             :null => false
     t.string   "first"
     t.string   "last"
-    t.string   "password"
+    t.string   "crypted_password",  :null => false
+    t.string   "password_salt",     :null => false
+    t.string   "persistence_token", :null => false
     t.string   "mobile"
     t.string   "tel"
     t.text     "address"

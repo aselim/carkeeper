@@ -6,9 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-users = [{first: "Aser", last: "Faisal", password: "password", mobile: "012", tel: "012", address: "11 Maadi", mail: "aser.maksoud@gmail.com"},
-	 {first: "Ahmed", last: "Atef", password: "password", mobile: "010", tel: "010", address: "50 Mohandseen", mail: "ahmed.s3lim@gmail.com"}
+users = [{login: "Aser", first: "Aser", last: "Faisal",crypted_password: "771e4b7135fa4eb932ffcd14dd728a12aed65bb7bfc619c5a15...", password_salt: "vNpeCVzeb86ZuOG9E3Mg", persistence_token: "4852853251fd38021d6fc406a3fcca8335931cb527a2fe409e3...", mobile: "012", tel: "012", address: "11 Maadi", mail: "aser.maksoud@gmail.com"},
+	 {login: "Ahmed", first: "Ahmed", last: "Atef", crypted_password: "771e4b7135fa4eb932ffcd14dd728a12aed65bb7bfc619c5a15...", password_salt: "vNpeCVzeb86ZuOG9E3Mg", persistence_token: "4852853251fd38021d6fc406a3fcca8335931cb527a2fe409e3...", mobile: "010", tel: "010", address: "50 Mohandseen", mail: "ahmed.s3lim@gmail.com"}
 	]
 
 users.each do |user|
