@@ -4,6 +4,8 @@ Carkeeper::Application.routes.draw do
   resources :users
 
   resources :user_sessions
+  match 'login' => "user_sessions#new", :as => :login
+  match '' => "cars#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
