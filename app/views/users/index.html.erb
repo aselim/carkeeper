@@ -1,9 +1,14 @@
-<h1>Listing users</h1>
-<p>Public Facing Content</p>  
-<%= link_to 'Login', new_user_session_path %>  
-
 <table>
   <tr>
+    <td><h3>User Login</h3></td>
+    <td><%= link_to 'Login', new_user_session_path %></td>
+  </tr>
+</table>
+
+<h1>Listing users</h1>
+<table>
+  <tr>
+    <th>Login</th>
     <th>First</th>
     <th>Last</th>
     <th>Mobile</th>
@@ -16,8 +21,10 @@
     <th></th>
   </tr>
 
+
 <% @users.each do |user| %>
   <tr>
+    <td><%= user.login %></td>
     <td><%= user.first %></td>
     <td><%= user.last %></td>
     <td><%= user.mobile %></td>
