@@ -3,6 +3,7 @@ class CarsController < ApplicationController
   # GET /cars.json
   def index
     @cars = Car.all
+    @users = User.all
     @user = current_user
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,7 @@ class CarsController < ApplicationController
   def show
     @car = Car.find(params[:id])
     @user = current_user
+    @users = User.all
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @car }

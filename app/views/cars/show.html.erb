@@ -37,7 +37,7 @@
 
 <p>
   <b>User:</b>
-  <%= @car.user_id %>
+  <%= User.find(@car.user_id).login %>
 </p>
 
 <p>

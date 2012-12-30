@@ -39,7 +39,7 @@
     <td><%= car.cc %></td>
     <td><%= car.used %></td>
     <td><%= car.km %></td>
-    <td><%= car.user_id %></td>
+    <td><%= User.find(car.user_id).login %></td>
     <td><%= car.comment %></td>
     <td><%= link_to 'Show', car %></td>
     <td><%= link_to 'Edit', edit_car_path(car) %></td>
