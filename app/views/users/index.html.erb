@@ -1,7 +1,14 @@
+<img src="images/Carkeeper.png" alt="logo">
 <table>
   <tr>
-    <td><h3>User Login</h3></td>
-    <td><%= link_to 'Login', new_user_session_path %></td>
+    <td><% if @user == nil %>
+	<%= 'User Login' %>
+	<%= link_to 'Login', new_user_session_path %>
+	<% else %>
+	<%= 'Welcome' %>
+	<%= @user.login%>
+	<%= link_to 'Logout', :logout %>
+	<% end %></td>
   </tr>
 </table>
 

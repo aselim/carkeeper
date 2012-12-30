@@ -1,39 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>First:</b>
-  <%= @user.first %>
-</p>
-
-<p>
-  <b>Last:</b>
-  <%= @user.last %>
-</p>
-
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
-
-<p>
-  <b>Mobile:</b>
-  <%= @user.mobile %>
-</p>
-
-<p>
-  <b>Tel:</b>
-  <%= @user.tel %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @user.address %>
-</p>
-
-<p>
-  <b>Id:</b>
-  <%= @user.id %>
-</p>
+Login: <%=h @user.login %>
 
 <p>
   <b>Mail:</b>
@@ -41,5 +8,7 @@
 </p>
 
 
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Logout', :logout %> |
 <%= link_to 'Back', users_path %>

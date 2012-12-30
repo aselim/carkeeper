@@ -1,4 +1,17 @@
-<img src="images/Carkeeper.png" alt="Big Boat">
+<img src="images/Carkeeper.png" alt="logo">
+<table>
+  <tr>
+    <td><% if @user == nil %>
+        <%= 'User Login' %>
+        <%= link_to 'Login', new_user_session_path %>
+        <% else %>
+        <%= 'Welcome' %>
+        <%= @user.login%>
+        <%= link_to 'Logout', :logout %>
+        <% end %></td>
+  </tr>
+</table>
+
 <h1>Listing cars</h1>
 
 <table>
