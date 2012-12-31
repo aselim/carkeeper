@@ -29,7 +29,9 @@
     <th></th>
   </tr>
 
-<% @user.each do |user| %>
+
+<% if @user.admin %>
+<% @users.each do |user| %>
   <tr>
     <td><%= user.login %></td>
     <td><%= user.first %></td>
@@ -37,11 +39,25 @@
     <td><%= user.mobile %></td>
     <td><%= user.tel %></td>
     <td><%= user.address %></td>
-    <td><%= user.id %></td>
     <td><%= user.mail %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+<% end %>
+<% else %>
+<tr>
+    <td><%= @user.login %></td>
+    <td><%= @user.first %></td>
+    <td><%= @user.last %></td>
+    <td><%= @user.mobile %></td>
+    <td><%= @user.tel %></td>
+    <td><%= @user.address %></td>
+    <td><%= @user.mail %></td>
+    <td><%= link_to 'Show', @user %></td>
+    <td><%= link_to 'Edit', edit_user_path(@user) %></td>
+    <td><%= link_to 'Destroy', @user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+
 <% end %>
 </table>

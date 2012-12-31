@@ -32,8 +32,10 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
+    <% if @cuser == nil %>
     <%= f.label :admin %><br />
     <%= f.check_box :admin %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :mobile %><br />

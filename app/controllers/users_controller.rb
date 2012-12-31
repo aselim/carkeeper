@@ -13,14 +13,19 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @car }
+    end
+
   end
 
   # GET /users/new
   # GET /users/new.json
   def new
     @user = User.new
-
+    @cuser = current_user
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
