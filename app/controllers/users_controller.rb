@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-#  before_filter :login_required, :only => [:index ,:show]
+  before_filter :login_required, :only => [:index ,:show, :destroy]
   # GET /users
   # GET /users.json
   def index
