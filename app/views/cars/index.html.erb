@@ -4,6 +4,7 @@
     <td><% if @user == nil %>
         <%= 'User Login' %>
         <%= link_to 'Login', new_user_session_path %>
+	<%= link_to 'Signup', new_user_path %>
         <% else %>
         <%= 'Welcome' %>
         <%= @user.login%>
@@ -42,12 +43,22 @@
     <td><%= User.find(car.user_id).login %></td>
     <td><%= car.comment %></td>
     <td><%= link_to 'Show', car %></td>
-    <td><%= link_to 'Edit', edit_car_path(car) %></td>
-    <td><%= link_to 'Destroy', car, confirm: 'Are you sure?', method: :delete %></td>
+    <td><% if @user != nil %>
+	<% if car.user_id == @user.id %>
+        <%= link_to 'Edit', edit_car_path(car) %>
+	<% end %>
+	<% end %></td>
+    <td><% if @user != nil %>
+	<% if car.user_id == @user.id %>
+	<%= link_to 'Destroy', car, confirm: 'Are you sure?', method: :delete %>
+	<% end %>
+	<% end %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
+<% if @user != nil %>
 <%= link_to 'New Car', new_car_path %>
+<% end %>

@@ -4,6 +4,7 @@
     <td><% if @user == nil %>
 	<%= 'User Login' %>
 	<%= link_to 'Login', new_user_session_path %>
+	<%= link_to 'Signup', new_user_path %>
 	<% else %>
 	<%= 'Welcome' %>
 	<%= @user.login%>
@@ -45,7 +46,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
