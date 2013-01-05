@@ -21,7 +21,7 @@
     <th><%= link_to 'Brand', cars_path(:sort=>"brand") %></th>
     <th><%= link_to 'Car Model', cars_path(:sort=>"carmodel") %></th>
     <th><%= link_to 'Year', cars_path(:sort=>"year") %></th>
-    <th><%= link_to 'Cc', cars_path(:sort=>"cc") %></th>
+    <th>Cc</th>
     <th>Used</th>
     <th><%= link_to 'KMs', cars_path(:sort=>"km") %></th>
     <th>User</th>
