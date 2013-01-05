@@ -18,6 +18,7 @@ class CarsController < ApplicationController
         end
     end
 
+
     @users = User.all
     @user = current_user
     respond_to do |format|
