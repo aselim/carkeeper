@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#users = [{login: "Aser", first: "Aser", last: "Faisal",crypted_password: "993315995bd4933feb92d9327777a3cdf9ba45ff5a499f03c6b...", password_salt: "tk6hxFh028uVm08UkKYU", persistence_token: "ce05fee73cc4f441582e2371fbf9f618ee94317032f93b0a5bb...", admin: false, mobile: "012", tel: "012", address: "11 Maadi", mail: "aser.maksoud@gmail.com"},
+#	 {login: "Ahmed", first: "Ahmed", last: "Atef", crypted_password: "1cd928ed8dbbdf54819b7e8c99ac63c35b05fca80cd2ea81edb...", password_salt: "bYkEeLH4Q5E0SShpiQ9P", persistence_token: "27110aa864a9f733644feb4e79fd1ee31ecfbe4811d4f3bb2ac...", admin: false, mobile: "010", tel: "010", address: "50 Mohandseen", mail: "ahmed.s3lim@gmail.com"}
+#	]
 users = [{login: "Aser", first: "Aser", last: "Faisal", password: "passwordaser", password_confirmation: "passwordaser", admin: false, mobile: "012", tel: "012", address: "11 Maadi", mail: "aser.maksoud@gmail.com"},
 	 {login: "Ahmed", first: "Ahmed", last: "Atef", password: "passwordahmed", password_confirmation: "passwordahmed", admin: false, mobile: "010", tel: "010", address: "50 Mohandseen", mail: "ahmed.s3lim@gmail.com"}
 	]
