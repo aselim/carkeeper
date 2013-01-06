@@ -1,10 +1,10 @@
 <ul class="navigation">
 <img src="images/Carkeeper.png" alt="logo">
 
-	<li><a href='/'>
+	<li>
 		<h2>Home</h2>
 		<p>Car Keeper</p>
-	</a></li>
+	</li>
 	<li>
 		<h2>Search</h2>
 		<p>Advanced Search</p>
@@ -13,39 +13,26 @@
 		<h2>About</h2>
 		<p>Who we are</p>
 	</li>
-
-        <% if @user == nil %>
-	<li><a href=<%= new_user_session_path %>>
+	<li>
+		<% if @user == nil %>
 		<h2>Sign-in</h2>
 		<p>Login</p>	        
-	</a></li>
-       	<% else %>
-	<li><a href=<%= edit_user_path(@user) %>>
-                <h2><%= @user.login%></h2>
-                <p>Pofile Setting</p>
-        </a></li>
-       	<% end %>
+        	<%= link_to 'Login', new_user_session_path %>
+        	<% else %>
+                <h2>Profile</h2>
+                <p>Setting</p>
+	        <%= @user.login%>
+	        <%= link_to 'Logout', :logout %>
+        	<% end %>
 
-        <% if @user != nil %>
-	<% if @user.admin %>
-        <li><a href=<%= users_path %>>
+
+		<h2>Profile</h2>
+		<p>Setting</p>
+	</li>
+        <li>
                 <h2>Administrator</h2>
                 <p>User Management</p>
-        </a></li>
-        <% end %>
-        <% end %>
-
-        <% if @user != nil %>
-        <li><a href=<%= logout_path %>>
-                <h2>Sign-out</h2>
-                <p>Logout</p>
-        </a></li>
-        <% else %>
-        <li><a href=<%= new_user_path %>>
-                <h2>Sign-up</h2>
-                <p>Registration</p>
-        </a></li>
-        <% end %>
+        </li>
 </ul>
 
 
@@ -57,7 +44,7 @@
 	<%= link_to 'Signup', new_user_path %>
         <% else %>
         <%= 'Welcome' %>
-        <%= @user.first %> <%= @user.last %>
+        <%= @user.login%>
         <%= link_to 'Logout', :logout %>
         <% end %></td>
   </tr>
