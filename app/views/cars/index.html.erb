@@ -14,20 +14,20 @@
 		<p>Who we are</p>
 	</li>
 
-        <% if @user == nil %>
+        <% if @luser == nil %>
 	<li><a href=<%= new_user_session_path %>>
 		<h2>Sign-in</h2>
 		<p>Login</p>	        
 	</a></li>
        	<% else %>
-	<li><a href=<%= edit_user_path(@user) %>>
-                <h2><%= @user.login%></h2>
+	<li><a href=<%= edit_user_path(@luser) %>>
+                <h2><%= @luser.login%></h2>
                 <p>Pofile Setting</p>
         </a></li>
        	<% end %>
 
-        <% if @user != nil %>
-	<% if @user.admin %>
+        <% if @luser != nil %>
+	<% if @luser.admin %>
         <li><a href=<%= users_path %>>
                 <h2>Administrator</h2>
                 <p>User Management</p>
@@ -35,7 +35,7 @@
         <% end %>
         <% end %>
 
-        <% if @user != nil %>
+        <% if @luser != nil %>
         <li><a href=<%= logout_path %>>
                 <h2>Sign-out</h2>
                 <p>Logout</p>
@@ -51,13 +51,13 @@
 
 <table>
   <tr>
-    <td><% if @user == nil %>
+    <td><% if @luser == nil %>
         <%= 'User Login' %>
         <%= link_to 'Login', new_user_session_path %>
 	<%= link_to 'Signup', new_user_path %>
         <% else %>
         <%= 'Welcome' %>
-        <%= @user.first %> <%= @user.last %>
+        <%= @luser.first %> <%= @luser.last %>
         <%= link_to 'Logout', :logout %>
         <% end %></td>
   </tr>
@@ -93,13 +93,13 @@
     <td><%= User.find(car.user_id).login %></td>
     <td><%= car.comment %></td>
     <td><%= link_to 'Show', car %></td>
-    <td><% if @user != nil %>
-	<% if car.user_id == @user.id %>
+    <td><% if @luser != nil %>
+	<% if car.user_id == @luser.id %>
         <%= link_to 'Edit', edit_car_path(car) %>
 	<% end %>
 	<% end %></td>
-    <td><% if @user != nil %>
-	<% if car.user_id == @user.id %>
+    <td><% if @luser != nil %>
+	<% if car.user_id == @luser.id %>
 	<%= link_to 'Destroy', car, confirm: 'Are you sure?', method: :delete %>
 	<% end %>
 	<% end %></td>
@@ -109,6 +109,6 @@
 
 <br />
 
-<% if @user != nil %>
+<% if @luser != nil %>
 <%= link_to 'New Car', new_car_path %>
 <% end %>

@@ -19,7 +19,7 @@ class CarsController < ApplicationController
     end
 
     @users = User.all
-    @user = current_user
+    @luser = current_user
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cars }
@@ -46,7 +46,7 @@ class CarsController < ApplicationController
   # GET /cars/1.json
   def show
     @car = Car.find(params[:id])
-    @user = current_user
+    @luser = current_user
     @users = User.all
     respond_to do |format|
       format.html # show.html.erb
@@ -58,7 +58,7 @@ class CarsController < ApplicationController
   # GET /cars/new.json
   def new
     @car = Car.new
-    @user = current_user
+    @luser = current_user
 
     respond_to do |format|
       format.html # new.html.erb

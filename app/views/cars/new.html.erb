@@ -14,20 +14,20 @@
 		<p>Who we are</p>
 	</li>
 
-        <% if @user == nil %>
+        <% if @luser == nil %>
 	<li><a href=<%= new_user_session_path %>>
 		<h2>Sign-in</h2>
 		<p>Login</p>	        
 	</a></li>
        	<% else %>
-	<li><a href=<%= edit_user_path(@user) %>>
-                <h2><%= @user.login%></h2>
+	<li><a href=<%= edit_user_path(@luser) %>>
+                <h2><%= @luser.login%></h2>
                 <p>Pofile Setting</p>
         </a></li>
        	<% end %>
 
-        <% if @user != nil %>
-	<% if @user.admin %>
+        <% if @luser != nil %>
+	<% if @luser.admin %>
         <li><a href=<%= users_path %>>
                 <h2>Administrator</h2>
                 <p>User Management</p>
@@ -35,7 +35,7 @@
         <% end %>
         <% end %>
 
-        <% if @user != nil %>
+        <% if @luser != nil %>
         <li><a href=<%= logout_path %>>
                 <h2>Sign-out</h2>
                 <p>Logout</p>

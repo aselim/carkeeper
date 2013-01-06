@@ -14,20 +14,20 @@
 		<p>Who we are</p>
 	</li>
 
-        <% if @user == nil %>
+        <% if @luser == nil %>
 	<li><a href=<%= new_user_session_path %>>
 		<h2>Sign-in</h2>
 		<p>Login</p>	        
 	</a></li>
        	<% else %>
-	<li><a href=<%= edit_user_path(@user) %>>
-                <h2><%= @user.login%></h2>
+	<li><a href=<%= edit_user_path(@luser) %>>
+                <h2><%= @luser.login%></h2>
                 <p>Pofile Setting</p>
         </a></li>
        	<% end %>
 
-        <% if @user != nil %>
-	<% if @user.admin %>
+        <% if @luser != nil %>
+	<% if @luser.admin %>
         <li><a href=<%= users_path %>>
                 <h2>Administrator</h2>
                 <p>User Management</p>
@@ -35,7 +35,7 @@
         <% end %>
         <% end %>
 
-        <% if @user != nil %>
+        <% if @luser != nil %>
         <li><a href=<%= logout_path %>>
                 <h2>Sign-out</h2>
                 <p>Logout</p>
@@ -50,13 +50,13 @@
 
 <table>
   <tr>
-    <td><% if @user == nil %>
+    <td><% if @luser == nil %>
 	<%= 'User Login' %>
 	<%= link_to 'Login', new_user_session_path %>
 	<%= link_to 'Signup', new_user_path %>
 	<% else %>
 	<%= 'Welcome' %>
-	<%= @user.login%>
+	<%= @luser.login%>
 	<%= link_to 'Logout', :logout %>
 	<% end %></td>
   </tr>
@@ -79,7 +79,7 @@
   </tr>
 
 
-<% if @user.admin %>
+<% if @luser.admin %>
 <% @users.each do |user| %>
   <tr>
     <td><%= user.login %></td>
@@ -96,16 +96,16 @@
 <% end %>
 <% else %>
 <tr>
-    <td><%= @user.login %></td>
-    <td><%= @user.first %></td>
-    <td><%= @user.last %></td>
-    <td><%= @user.mobile %></td>
-    <td><%= @user.tel %></td>
-    <td><%= @user.address %></td>
-    <td><%= @user.mail %></td>
-    <td><%= link_to 'Show', @user %></td>
-    <td><%= link_to 'Edit', edit_user_path(@user) %></td>
-    <td><%= link_to 'Destroy', @user, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= @luser.login %></td>
+    <td><%= @luser.first %></td>
+    <td><%= @luser.last %></td>
+    <td><%= @luser.mobile %></td>
+    <td><%= @luser.tel %></td>
+    <td><%= @luser.address %></td>
+    <td><%= @luser.mail %></td>
+    <td><%= link_to 'Show', @luser %></td>
+    <td><%= link_to 'Edit', edit_user_path(@luser) %></td>
+    <td><%= link_to 'Destroy', @luser, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 
 <% end %>
