@@ -109,26 +109,28 @@
 
 <% @cars.each do |car| %>
 <ul class="car">
-<li><a href=<%= car_path(car) %> >
-  Publish: <%= car.datein %>
-<table>
+<li><a href= <%= car_path(car)%>><table>
  <tr>
-  <td>Brand: <%= car.brand %></td>
-  <td>Model: <%= car.carmodel %></td>
-  <td>Condition: <% if car.used %> Used (<%= car.km %>KM)<% else %> New <% end %><td>
- </tr>
- <tr>
-  <td>CC: <%= car.cc %>CC</td>
-  <td></td>
-  <td>Manfacture Year: <%= car.year %></td>
- </tr>
- <tr>
-  <td>Publisher: <%= User.find(car.user_id).first %> <%= User.find(car.user_id).last %></td>
-  <td>Mobile: <%= User.find(car.user_id).mobile %></td>
-  <td></td>
- </tr>
-</table>
-Comments: <%= car.comment %></a></li>
+  <td width=100px align=center valign=middle><%= image_tag car.pic.url (:thumb) %></td>
+  <td>Publish: <%= car.datein %>
+   <table>
+    <tr>
+     <td width=500px>Brand: <%= car.brand %></td>
+     <td width=500px>Model: <%= car.carmodel %></td>
+     <td width=500px>Condition: <% if car.used %> Used (<%= car.km %>KM)<% else %> New <% end %><td>
+    </tr>
+    <tr>
+     <td>CC: <%= car.cc %>CC</td>
+     <td></td>
+     <td>Manfacture Year: <%= car.year %></td>
+    </tr>
+    <tr>
+     <td>Publisher: <%= User.find(car.user_id).first %> <%= User.find(car.user_id).last %></td>
+     <td>Mobile: <%= User.find(car.user_id).mobile %></td>
+     <td></td>
+    </tr>
+   </table>
+Comments: <%= car.comment %></td></tr></table></a></li>
 </ul>
 <% end %>
 

@@ -9,7 +9,7 @@ gem "sqlite3", :groups => [:development, :test]
 gem "pg", :groups => [:production]
 
 gem "authlogic"
-
+gem "paperclip", "~> 2.3"
 gem "rails3-generators"
 # Gems used only for assets and not required
 # in production environments by default.

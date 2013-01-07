@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121225100340) do
+ActiveRecord::Schema.define(:version => 20130107163433) do
 
   create_table "cars", :force => true do |t|
     t.datetime "datein"
@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(:version => 20121225100340) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
   end
 
   create_table "user_sessions", :force => true do |t|
