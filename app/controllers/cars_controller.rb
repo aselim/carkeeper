@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.paginate :page => params[:car_page], :per_page => 10
     @sort=params[:sort]
     if params.has_key?(:sort)
     	if (@sort == 'brand')

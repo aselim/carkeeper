@@ -135,7 +135,7 @@ Comments: <%= car.comment %></td></tr></table></a></li>
 <% end %>
 
 <br />
-
+<ul class="digg_pagination"><%= will_paginate @cars, :param_name => 'car_page' %></ul>
 <% if @luser != nil %>
 <%= link_to 'New Car', new_car_path %>
 <% end %>

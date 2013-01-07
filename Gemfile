@@ -10,6 +10,8 @@ gem "pg", :groups => [:production]
 
 gem "authlogic"
 gem "paperclip", "~> 2.3"
+gem "will_paginate", "~> 3.0.pre2"
+
 gem "rails3-generators"
 # Gems used only for assets and not required
 # in production environments by default.
