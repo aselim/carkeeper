@@ -53,7 +53,7 @@
   <b>Datein:</b>
   <%= @car.datein %>
 </p>
-
+<%= image_tag @user.pic.url %></b>
 <p>
   <b>Brand:</b>
   <%= @car.brand %>
@@ -87,6 +87,16 @@
 <p>
   <b>User:</b>
   <%= User.find(@car.user_id).login %>
+</p>
+
+<p>
+  <b>Mobile:</b>
+  <%= User.find(@car.user_id).mobile %>
+</p>
+
+<p>
+  <b>E-Mail:</b>
+  <%= User.find(@car.user_id).mail %>
 </p>
 
 <p>

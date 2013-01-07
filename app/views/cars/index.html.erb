@@ -82,7 +82,7 @@
   </tr>
 
 <% @cars.each do |car| %>
-  <tr>
+<tr>
     <td><%= car.datein %></td>
     <td><%= car.brand %></td>
     <td><%= car.carmodel %></td>
@@ -106,6 +106,31 @@
   </tr>
 <% end %>
 </table>
+
+<% @cars.each do |car| %>
+<ul class="car">
+<li><a href=<%= car_path(car) %> >
+  Publish: <%= car.datein %>
+<table>
+ <tr>
+  <td>Brand: <%= car.brand %></td>
+  <td>Model: <%= car.carmodel %></td>
+  <td>Condition: <% if car.used %> Used (<%= car.km %>KM)<% else %> New <% end %><td>
+ </tr>
+ <tr>
+  <td>CC: <%= car.cc %>CC</td>
+  <td></td>
+  <td>Manfacture Year: <%= car.year %></td>
+ </tr>
+ <tr>
+  <td>Publisher: <%= User.find(car.user_id).first %> <%= User.find(car.user_id).last %></td>
+  <td>Mobile: <%= User.find(car.user_id).mobile %></td>
+  <td></td>
+ </tr>
+</table>
+Comments: <%= car.comment %></a></li>
+</ul>
+<% end %>
 
 <br />
 
