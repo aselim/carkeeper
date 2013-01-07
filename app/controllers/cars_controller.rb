@@ -2,21 +2,7 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.paginate :page => params[:car_page], :per_page => 10
-    @sort=params[:sort]
-    if params.has_key?(:sort)
-    	if (@sort == 'brand')
-	    @cars = @cars.sort_by{|i| i.brand }
-        elsif (@sort == 'carmodel')
-            @cars = @cars.sort_by{|i| i.carmodel }
-	elsif (@sort == 'year')
-            @cars = @cars.sort_by{|i| i.year }
-        elsif (@sort == 'cc')
-            @cars = @cars.sort_by{|i| i.cc }
-	elsif (@sort == 'km')
-            @cars = @cars.sort_by{|i| i.km }
-        end
-    end
+    @cars = Car.pagesearch(params[:car_page], params[:sort])
 
     @users = User.all
     @luser = current_user
@@ -25,20 +11,6 @@ class CarsController < ApplicationController
       format.json { render json: @cars }
     end
 
-    @sort=params[:sort]
-    if params.has_key?(:sort)
-    	if (@sort == 'brand')
-	    @cars = @cars.sort_by{|i| i.brand }
-        elsif (@sort == 'carmodel')
-            @cars = @cars.sort_by{|i| i.carmodel }
-	elsif (@sort == 'year')
-            @cars = @cars.sort_by{|i| i.year }
-	elsif (@sort == 'km')
-            @cars = @cars.sort_by{|i| i.km }
-        end
-    else
-	@cars = Car.all
-    end
 
   end
 

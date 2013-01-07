@@ -48,63 +48,19 @@
         <% end %>
 </ul>
 
-
-<table>
-  <tr>
-    <td><% if @luser == nil %>
-        <%= 'User Login' %>
-        <%= link_to 'Login', new_user_session_path %>
-	<%= link_to 'Signup', new_user_path %>
-        <% else %>
-        <%= 'Welcome' %>
-        <%= @luser.first %> <%= @luser.last %>
-        <%= link_to 'Logout', :logout %>
-        <% end %></td>
-  </tr>
-</table>
-
+<br>
 <h1>Listing cars</h1>
-
+<br>
 <table>
   <tr>
-    <th>Datein</th>
-    <th><%= link_to 'Brand', cars_path(:sort=>"brand") %></th>
-    <th><%= link_to 'Car Model', cars_path(:sort=>"carmodel") %></th>
-    <th><%= link_to 'Year', cars_path(:sort=>"year") %></th>
-    <th><%= link_to 'Cc', cars_path(:sort=>"cc") %></th>
-    <th>Used</th>
-    <th><%= link_to 'KMs', cars_path(:sort=>"km") %></th>
-    <th>User</th>
-    <th>Comment</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th width=70px>Sort by:</th>
+    <th width=70px><%= link_to 'Date', cars_path(:sort=>"datein") %></th>
+    <th width=70px><%= link_to 'Brand', cars_path(:sort=>"brand") %></th>
+    <th width=70px><%= link_to 'Car Model', cars_path(:sort=>"carmodel") %></th>
+    <th width=70px><%= link_to 'Year', cars_path(:sort=>"year") %></th>
+    <th width=70px><%= link_to 'CC', cars_path(:sort=>"cc") %></th>
+    <th width=70px><%= link_to 'KMs', cars_path(:sort=>"km") %></th>
   </tr>
-
-<% @cars.each do |car| %>
-<tr>
-    <td><%= car.datein %></td>
-    <td><%= car.brand %></td>
-    <td><%= car.carmodel %></td>
-    <td><%= car.year %></td>
-    <td><%= car.cc %></td>
-    <td><%= car.used %></td>
-    <td><%= car.km %></td>
-    <td><%= User.find(car.user_id).login %></td>
-    <td><%= car.comment %></td>
-    <td><%= link_to 'Show', car %></td>
-    <td><% if @luser != nil %>
-	<% if car.user_id == @luser.id %>
-        <%= link_to 'Edit', edit_car_path(car) %>
-	<% end %>
-	<% end %></td>
-    <td><% if @luser != nil %>
-	<% if car.user_id == @luser.id %>
-	<%= link_to 'Destroy', car, confirm: 'Are you sure?', method: :delete %>
-	<% end %>
-	<% end %></td>
-  </tr>
-<% end %>
 </table>
 
 <% @cars.each do |car| %>
@@ -131,6 +87,18 @@
     </tr>
    </table>
 Comments: <%= car.comment %></td></tr></table></a></li>
+<table><tr width= 600px>
+	<td align=center valign=middle><% if @luser != nil %>
+        <% if car.user_id == @luser.id %>
+        <%= link_to 'Edit', edit_car_path(car) %>
+        <% end %>
+        <% end %></td>
+        <td align=center valign=middle><% if @luser != nil %>
+        <% if car.user_id == @luser.id %>
+        <%= link_to 'Destroy', car, confirm: 'Are you sure?', method: :delete %>
+        <% end %>
+        <% end %></td></tr>
+  </table>
 </ul>
 <% end %>
 
