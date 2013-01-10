@@ -65,13 +65,13 @@
 <h1>Listing users</h1>
 <table>
   <tr>
-    <th>Login</th>
-    <th>First</th>
-    <th>Last</th>
+    <th width=70px><%= link_to 'ID', users_path(:sort=>"id") %></th>
+    <th width=70px><%= link_to 'Login', users_path(:sort=>"login") %></th>
+    <th width=70px><%= link_to 'First Name', users_path(:sort=>"first") %></th>
+    <th width=70px><%= link_to 'Last Name', users_path(:sort=>"last") %></th>
     <th>Mobile</th>
     <th>Tel</th>
     <th>Address</th>
-    <th>Id</th>
     <th>Mail</th>
     <th></th>
     <th></th>
@@ -82,6 +82,7 @@
 <% if @luser.admin %>
 <% @users.each do |user| %>
   <tr>
+    <td><%= user.id %></td>
     <td><%= user.login %></td>
     <td><%= user.first %></td>
     <td><%= user.last %></td>
@@ -96,6 +97,7 @@
 <% end %>
 <% else %>
 <tr>
+    <td><%= @luser.id %></td>
     <td><%= @luser.login %></td>
     <td><%= @luser.first %></td>
     <td><%= @luser.last %></td>

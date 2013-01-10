@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate :page => params[:user_page], :per_page => 10
+    @users = User.pagesearch(params[:user_page], params[:sort])
     @luser = current_user
     respond_to do |format|
       format.html # index.html.erb
