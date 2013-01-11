@@ -1,0 +1,52 @@
+Feature: display list of cars sorted by different criteria
+ 
+  As a person looking for a used car
+  So that I can quickly browse cars based on my preferences
+  I want to see cars sorted by brand
+
+Background: cars have been added to database
+  
+  Given the following cars exist:
+  | brand     | carmodel | year  |
+  | Toyota    | Lexus    | 2000  |
+  | Honda     | Civic    | 2005  |
+  | Fiat      | 128      | 1995  |
+
+And I am on the home page
+
+Scenario: sort cars by brand
+When I follow "Brand"
+Then I should see "Fiat" before "Honda"
+
+
+########
+
+Scenario: sort movies in increasing order of release date
+Given I check the following ratings: G, PG, PG-13, NC-17, R
+When I press "ratings_submit"
+And I follow "Release Date"
+Then I should see "2001: A Space Odyssey" before "Raiders of the Lost Ark"
+And I should see "Raiders of the Lost Ark" before "The Terminator"
+And I should see "The Terminator" before "When Harry Met Sally"
+And I should see "When Harry Met Sally" before "Aladdin"
+And I should see "Aladdin" before "Chicken Run"
+And I should see "Chicken Run" before "Chocolat"
+And I should see "Chocolat" before "Amelie"
+And I should see "Amelie" before "The Incredibles"
+And I should see "The Incredibles" before "The Help"
+#Then I should see "2001: A Space Odyssey"
+#And I should see "Raiders of the Lost Ark"
+#And I should see "The Terminator"
+#And I should see "When Harry Met Sally"
+#And I should see "Aladdin"
+#And I should see "Chicken Run"
+#And I should see "Chocolat"
+#And I should see "Amelie"
+#And I should see "The Incredibles"
+#And I should see "The Help"
+
+
+
+
+  # your steps here
+
