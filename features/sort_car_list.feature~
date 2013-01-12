@@ -18,35 +18,3 @@ Scenario: sort cars by brand
 When I follow "Brand"
 Then I should see "Fiat" before "Honda"
 
-
-########
-
-Scenario: sort movies in increasing order of release date
-Given I check the following ratings: G, PG, PG-13, NC-17, R
-When I press "ratings_submit"
-And I follow "Release Date"
-Then I should see "2001: A Space Odyssey" before "Raiders of the Lost Ark"
-And I should see "Raiders of the Lost Ark" before "The Terminator"
-And I should see "The Terminator" before "When Harry Met Sally"
-And I should see "When Harry Met Sally" before "Aladdin"
-And I should see "Aladdin" before "Chicken Run"
-And I should see "Chicken Run" before "Chocolat"
-And I should see "Chocolat" before "Amelie"
-And I should see "Amelie" before "The Incredibles"
-And I should see "The Incredibles" before "The Help"
-#Then I should see "2001: A Space Odyssey"
-#And I should see "Raiders of the Lost Ark"
-#And I should see "The Terminator"
-#And I should see "When Harry Met Sally"
-#And I should see "Aladdin"
-#And I should see "Chicken Run"
-#And I should see "Chocolat"
-#And I should see "Amelie"
-#And I should see "The Incredibles"
-#And I should see "The Help"
-
-
-
-
-  # your steps here
-

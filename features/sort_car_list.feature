@@ -18,3 +18,11 @@ Scenario: sort cars by brand
 When I follow "Brand"
 Then I should see "Fiat" before "Honda"
 
+Scenario: sort cars by carmodel
+When I follow "Car Model"
+Then I should see "128" before "Civic"
+
+Scenario: sort cars by year
+When I follow "Year"
+Then I should see "1995" before "2000"
+
