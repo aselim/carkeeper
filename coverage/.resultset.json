@@ -1,0 +1,15 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/ubuntu/carkeeper9/vendor/plugins/paperclip/cucumber/paperclip_steps.rb": [
+        1,
+        0,
+        0,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1358110951
+  }
+}

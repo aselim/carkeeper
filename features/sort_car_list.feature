@@ -1,3 +1,4 @@
+
 Feature: display list of cars sorted by different criteria
  
   As a person looking for a used car
@@ -21,8 +22,10 @@ Then I should see "Fiat" before "Honda"
 Scenario: sort cars by carmodel
 When I follow "Car Model"
 Then I should see "128" before "Civic"
+And I should see "Civic" before "Lexus"
 
 Scenario: sort cars by year
 When I follow "Year"
 Then I should see "1995" before "2000"
+And I should see "2000" before "2005"
 
