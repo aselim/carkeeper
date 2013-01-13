@@ -5,10 +5,10 @@
 		<h2>Home</h2>
 		<p>Car Keeper</p>
 	</a></li>
-	<li>
+	<li><a href=<%= car_search_path %>>
 		<h2>Search</h2>
 		<p>Advanced Search</p>
-	</li>
+	</a></li>
 	<li>
 		<h2>About</h2>
 		<p>Who we are</p>
@@ -48,7 +48,8 @@
         <% end %>
 </ul>
 <p id="notice"><%= notice %></p>
-
+<ul class="login">
+<li>
 <p>
   <b>Datein:</b>
   <%= @car.datein %>
@@ -110,3 +111,4 @@
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>
+</li></ul>

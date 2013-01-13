@@ -5,10 +5,10 @@
 		<h2>Home</h2>
 		<p>Car Keeper</p>
 	</a></li>
-	<li>
+	<li><a href=<%= car_search_path %>>
 		<h2>Search</h2>
 		<p>Advanced Search</p>
-	</li>
+	</a></li>
 	<li>
 		<h2>About</h2>
 		<p>Who we are</p>
@@ -47,9 +47,10 @@
         </a></li>
         <% end %>
 </ul>
+<ul class="login">
+<li>
 <h1>Editing car</h1>
-
 <%= render 'form' %>
-
+</li></ul>
 <%= link_to 'Show', @car %> |
 <%= link_to 'Back', cars_path %>

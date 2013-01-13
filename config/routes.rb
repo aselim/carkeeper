@@ -1,4 +1,10 @@
 Carkeeper::Application.routes.draw do
+
+  resources :cmodels
+
+  resources :cbrands
+
+  match 'cars/search' => "cars#search", :as => :car_search #need to be before since the routes work in orde
   resources :cars
 
   resources :users

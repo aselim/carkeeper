@@ -1,0 +1,2 @@
+module CbrandsHelper
+end

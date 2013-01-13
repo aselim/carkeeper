@@ -47,7 +47,27 @@
         </a></li>
         <% end %>
 </ul>
-<h1>New user</h1>
+<ul class="login">
+<li>
+<h1>Car Search</h1>
+<%= form_tag cars_path(:sort=>"datein") , :method => 'get' do %>
 
-<%= render 'form' %>
-<%= link_to 'Back', users_path %>
+    <%= label_tag :brand %>
+    <%= text_field_tag :brand, params[:brand] %> </br>
+    <%= label_tag :cmodel %>
+    <%= text_field_tag :cmodel, params[:cmodel] %> </br>
+    <%= label_tag :used %>
+    <%= text_field_tag :used, params[:used] %> </br>
+    <%= label_tag :year %>
+    <%= text_field_tag :year, params[:year] %> </br>
+    <%= label_tag :Price %>
+    <%= text_field_tag :price, params[:price] %> </br>
+<%= submit_tag "Search", :sort => "datein" %>
+</li>
+</ul>
+
+
+
+<% end %>
+
+<%= link_to 'Back', cars_path %>

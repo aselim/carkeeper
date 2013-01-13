@@ -1,5 +1,7 @@
 class Car < ActiveRecord::Base
    belongs_to :user
+   belongs_to :cbrand
+   belongs_to :cmodel
    validates :brand, :presence => true
    validates :carmodel, :presence => true
    validates :year, :presence => true
@@ -13,8 +15,9 @@ class Car < ActiveRecord::Base
 
 
 
-def self.pagesearch(page, order)
+def self.pagesearch(page, order, me, brand, cmodel, used, year, price)
   paginate :per_page => 5, :page => page,
+	   :conditions => ['user_id like ? and brand like ? and carmodel like ? and used like ? and year >= ? and price <= ? ', "%#{me}%","%#{brand}%","%#{cmodel}%","%#{used}%",year,price],
            :order => order
 end
 

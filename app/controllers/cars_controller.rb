@@ -2,8 +2,15 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.pagesearch(params[:car_page], params[:sort])
-
+	if (params[:price] == nil  and params[:year] == nil)
+    @cars = Car.pagesearch(params[:car_page], params[:sort], params[:me] ,params[:brand], params[:cmodel], params[:used],  "1", "1000000000000")
+	elsif (params[:year] == nil)
+    @cars = Car.pagesearch(params[:car_page], params[:sort], params[:me] ,params[:brand], params[:cmodel], params[:used], "1", params[:price])
+	elsif (params[:price] == nil)
+    @cars = Car.pagesearch(params[:car_page], params[:sort], params[:me] ,params[:brand], params[:cmodel], params[:used],  params[:year], "1000000000000")
+	else
+    @cars = Car.pagesearch(params[:car_page], params[:sort], params[:me] ,params[:brand], params[:cmodel], params[:used],  params[:year], params[:price])
+end
     @users = User.all
     @luser = current_user
     respond_to do |format|
@@ -13,6 +20,17 @@ class CarsController < ApplicationController
 
 
   end
+
+  def search
+    @car = Car.new
+    @luser = current_user
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @car }
+    end
+  end
+
 
   # GET /cars/1
   # GET /cars/1.json
@@ -41,6 +59,8 @@ class CarsController < ApplicationController
   # GET /cars/1/edit
   def edit
     @car = Car.find(params[:id])
+    @luser = current_user
+
   end
 
   # POST /cars
