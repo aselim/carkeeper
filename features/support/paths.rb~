@@ -16,13 +16,18 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/cars'
 
-#    when /^the edit page for "(.*)"/
-#      m = Car.find_by_title($1)
-#      edit_car_path(m)
+    when /^the session homepage$/
+      '/user_sessions'
 
-#    when /^the details page for "(.*)"/
-#      m = Car.find_by_title($1)
-#      car_path(m)
+    
+
+    when /^the edit page for "(.*)"/
+      m = Car.find_by_title($1)
+      edit_car_path(m)
+
+    when /^the details page for "(.*)"/
+      m = Car.find_by_title($1)
+      car_path(m)
 
 
     # Add more mappings here.

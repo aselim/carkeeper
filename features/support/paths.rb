@@ -16,6 +16,13 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/cars'
 
+    when /^the session homepage$/
+      '/user_sessions'
+
+    when /^the user homepage$/
+      '/users'
+    
+
     when /^the edit page for "(.*)"/
       m = Car.find_by_title($1)
       edit_car_path(m)

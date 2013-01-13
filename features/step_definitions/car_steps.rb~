@@ -20,9 +20,6 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.content  is the entire content of the page as a string.
   #flunk "Unimplemented"
-  regex=Regex.new(/#{e1}.*#{e2}/)
-  found=page.body=~regex
-  # debugger
-  assert found
+  p page.body =~ /#.*{e1}.*#{e2}/ 
 end
 

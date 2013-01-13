@@ -18,6 +18,7 @@ And I am on the home page
 Scenario: sort cars by brand
 When I follow "Brand"
 Then I should see "Fiat" before "Honda"
+And I should see "Honda" before "Toyota"
 
 Scenario: sort cars by carmodel
 When I follow "Car Model"

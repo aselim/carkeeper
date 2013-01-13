@@ -1,4 +1,3 @@
-SimpleCov.start
 
 Feature: display list of cars sorted by different criteria
  
