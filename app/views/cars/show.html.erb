@@ -108,7 +108,17 @@
   <%= @car.comment %>
 </p>
 
-
-<%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', cars_path %>
+<table><tr>
+    <% if @luser != nil %>
+    <% if @car.user_id == @luser.id %>	
+	<th width=120px><ul class="digg_pagination" align=center><%= link_to 'Edit', edit_car_path(@car) %></ul></th>
+    <% end %>
+    <% end %>
+    <% if @luser != nil %>
+    <% if @car.user_id == @luser.id %>
+	<th width=100px><ul class="digg_pagination" align=center><%= link_to 'Destroy', @car, confirm: 'Are you sure?', method: :delete %></ul></th>
+    <% end %>
+    <% end %>
+<th width=120px><ul class="digg_pagination" align=center><%= link_to 'Back', cars_path %></ul></th>
+</tr></table>
 </li></ul>

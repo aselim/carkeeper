@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.pagesearch(params[:user_page], params[:sort])
+    @users = User.pagesearch(params[:user_page], params[:sort], params[:login], params[:first], params[:last])
     @luser = current_user
     respond_to do |format|
       format.html # index.html.erb

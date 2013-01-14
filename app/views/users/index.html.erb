@@ -63,6 +63,22 @@
 </table>
 
 <h1>Listing users</h1>
+
+<%= form_tag users_path(:sort=>"id") , :method => 'get' do %>
+<table><tr><td>
+<ul class="user">
+<li>
+
+    <%= label_tag :Login %>
+    <%= text_field_tag :login, params[:login] %> </br>
+    <%= label_tag :First %>
+    <%= text_field_tag :first, params[:first] %> </br>
+    <%= label_tag :used %>
+    <%= text_field_tag :last, params[:last] %> </br>
+</li></ul></td>
+<td><%= submit_tag "Search", :sort => "id" %></td><tr></table>
+<% end %>
+
 <table>
   <tr>
     <th width=70px><%= link_to 'ID', users_path(:sort=>"id") %></th>
@@ -77,11 +93,12 @@
     <th></th>
     <th></th>
   </tr>
-
-
+</table>
 <% if @luser.admin %>
 <% @users.each do |user| %>
-  <tr>
+<table><tr><td>
+   <ul class="user">
+<li><table><tr>
     <td><%= user.id %></td>
     <td><%= user.login %></td>
     <td><%= user.first %></td>
@@ -93,7 +110,7 @@
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  </tr></table></li></ul>
 <% end %>
 <% else %>
 <tr>
@@ -111,5 +128,5 @@
   </tr>
 
 <% end %>
-</table>
+</table></li></ul>
 <ul class="digg_pagination"><%= will_paginate @users, :param_name => 'user_page' %></ul>
