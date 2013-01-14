@@ -48,43 +48,77 @@
         <% end %>
 </ul>
 <p id="notice"><%= notice %></p>
+<ul class="login">
+<li>
+<p>
+  <b>Datein:</b>
+  <%= @car.datein %>
+</p>
+<%= image_tag @car.pic.url %></b>
+<p>
+  <b>Brand:</b>
+  <%= @car.brand %>
+</p>
 
-Login: <%=h @user.login %>
 <p>
-  <b>ID:</b>
-  <%= @user.id %>
+  <b>Carmodel:</b>
+  <%= @car.carmodel %>
 </p>
+
 <p>
-  <b>First:</b>
-  <%= @user.first %>
+  <b>Year:</b>
+  <%= @car.year %>
 </p>
+
 <p>
-  <b>Last:</b>
-  <%= @user.last %>
+  <b>Cc:</b>
+  <%= @car.cc %>
 </p>
+
 <p>
-  <b>Administrator:</b>
-  <%= @user.admin %>
+  <b>Used:</b>
+  <%= @car.used %>
 </p>
+
+<p>
+  <b>Km:</b>
+  <%= @car.km %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= User.find(@car.user_id).login %>
+</p>
+
 <p>
   <b>Mobile:</b>
-  <%= @user.mobile %>
-</p>
-<p>
-  <b>Telephone:</b>
-  <%= @user.tel %>
-</p>
-<p>
-  <b>Address:</b>
-  <%= @user.address %>
-</p>
-<p>
-  <b>Mail:</b>
-  <%= @user.mail %>
+  <%= User.find(@car.user_id).mobile %>
 </p>
 
+<p>
+  <b>E-Mail:</b>
+  <%= User.find(@car.user_id).mail %>
+</p>
+<p>
+  <b>Price:</b>
+  <%= @car.price %>
+</p>
+<p>
+  <b>Comment:</b>
+  <%= @car.comment %>
+</p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Logout', :logout %> |
-<%= link_to 'Back', users_path %>
+<table><tr>
+    <% if @luser != nil %>
+    <% if @car.user_id == @luser.id %>	
+	<th width=120px><ul class="digg_pagination" align=center><%= link_to 'Edit', edit_car_path(@car) %></ul></th>
+    <% end %>
+    <% end %>
+    <% if @luser != nil %>
+    <% if @car.user_id == @luser.id %>
+	<th width=100px><ul class="digg_pagination" align=center><%= link_to 'Destroy', @car, confirm: 'Are you sure?', method: :delete %></ul></th>
+    <% end %>
+    <% end %>
+<th width=120px><ul class="digg_pagination" align=center><%= link_to 'Back', cars_path %></ul></th>
+</tr></table>
+</li></ul>

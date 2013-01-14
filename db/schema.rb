@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(:version => 20130113012212) do
     t.string   "password_salt",     :null => false
     t.string   "persistence_token", :null => false
     t.boolean  "admin"
-    t.string   "mobile"
-    t.string   "tel"
+    t.integer  "mobile"
+    t.integer  "tel"
     t.text     "address"
     t.string   "mail"
     t.datetime "created_at"

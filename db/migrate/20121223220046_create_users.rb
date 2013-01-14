@@ -8,8 +8,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :password_salt,       :null => false
       t.string  :persistence_token,   :null => false
       t.boolean	:admin
-      t.string 	:mobile
-      t.string 	:tel
+      t.integer 	:mobile
+      t.integer 	:tel
       t.text 	:address
       t.string 	:id
       t.string 	:mail

@@ -21,7 +21,11 @@ class UsersController < ApplicationController
     end
 
   end
+  def edit
+    @user = User.find(params[:id])
+    @luser = current_user
 
+  end
   # GET /users/new
   # GET /users/new.json
   def new

@@ -1,7 +1,5 @@
 class Car < ActiveRecord::Base
    belongs_to :user
-   belongs_to :cbrand
-   belongs_to :cmodel
    validates :brand, :presence => true
    validates :carmodel, :presence => true
    validates :year, :presence => true

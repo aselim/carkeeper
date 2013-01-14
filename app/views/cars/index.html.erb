@@ -9,10 +9,10 @@
 		<h2>Search</h2>
 		<p>Advanced Search</p>
 	</a></li>
-	<li>
+	<li><a href=<%= about_path %>>
 		<h2>About</h2>
 		<p>Who we are</p>
-	</li>
+	</a></li>
 
         <% if @luser == nil %>
 	<li><a href=<%= new_user_session_path %>>
@@ -54,19 +54,13 @@
 <table>
   <tr>
     <% if @luser != nil %>
-    <% if @luser.admin %>    
     <th width=100px><ul class="digg_pagination" align=center><%= link_to 'Add A Car', new_car_path %></ul></th>
     <% end %>
-    <% end %>
     <% if @luser != nil %>
-    <% if @luser.admin %>
     <th width=120px><ul class="digg_pagination" align=center><%= link_to 'Show All Cars', "/" %></ul></th>
     <% end %>
-    <% end %>
     <% if @luser != nil %>
-    <% if @luser.admin %>
     <th width=120px><ul class="digg_pagination" align=center><%= link_to 'Show My Cars', cars_path(:me=>@luser.id) %></ul></th>
-    <% end %>
     <% end %>
     <th width=70px>Sort by:</th>
     <th width=70px><%= link_to 'Date', cars_path(:sort=>"datein") %></th>

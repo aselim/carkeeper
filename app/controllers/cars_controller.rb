@@ -31,6 +31,9 @@ end
     end
   end
 
+  def about
+@luser = current_user
+  end
 
   # GET /cars/1
   # GET /cars/1.json
