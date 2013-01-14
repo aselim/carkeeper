@@ -1,0 +1,20 @@
+Feature: Next
+  In order to scroll to the second page
+  So that I can find what I want
+
+Background: cars have been added to database
+  
+  Given the following cars exist:
+  | brand     | carmodel | year  |
+  | Toyota    | Lexus    | 2000  |
+  | Toyota    | Cressida | 2005  |
+  | Hyundai   | accent   | 2005  |
+  | Fiat      | 128      | 2005  |
+  | Hyundai   | accent   | 2005  |
+  | Volvo     | S60      | 2012  |
+
+  Scenario: Search by brand
+
+    Given I am on the homepage
+    When I follow "Next"
+    Then I should see "Volvo"

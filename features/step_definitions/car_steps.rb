@@ -2,8 +2,7 @@ Given /the following cars exist/ do |cars_table|
   cars_table.hashes.each do |car|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that car to the database here.
-if car[:brand]!='brand'
-
+    if car[:brand]!='brand'
 	a=Car.new
 	a.brand=car[:brand]
 	a.carmodel=car[:carmodel]
@@ -12,6 +11,7 @@ if car[:brand]!='brand'
   end
   #flunk "Unimplemented"
 end
+
 
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
