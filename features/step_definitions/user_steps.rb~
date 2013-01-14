@@ -4,11 +4,11 @@ Given /the following users exist/ do |users_table|
     # you should arrange to add that car to the database here.
    if user[:login]!='login'
 	a=User.new
+        a.id=1
 	a.login=user[:login]
 	a.password=user[:password]
         a.password_confirmation=user[:password]
     end
-p a
   end
   #flunk "Unimplemented"
 end

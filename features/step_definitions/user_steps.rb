@@ -9,7 +9,21 @@ Given /the following users exist/ do |users_table|
 	a.password=user[:password]
         a.password_confirmation=user[:password]
     end
-p a
+  end
+  #flunk "Unimplemented"
+end
+
+Given /the following Dusers exist/ do |users_table|
+  users_table.hashes.each do |user|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that car to the database here.
+   if user[:login]!='login'
+	a=User.new
+	a.login=user[:login]
+	a.password=user[:password]
+        a.password_confirmation=user[:password]
+        a.admin=user[:admin]
+    end
   end
   #flunk "Unimplemented"
 end
