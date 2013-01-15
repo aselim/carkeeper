@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20130107180519) do
     t.datetime "datein"
     t.string   "brand"
     t.string   "carmodel"
-    t.string   "year"
+    t.integer  "year"
     t.integer  "cc"
     t.boolean  "used"
     t.float    "km"

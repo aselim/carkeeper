@@ -13,9 +13,9 @@ class Car < ActiveRecord::Base
 
 
 
-def self.pagesearch(page, order, me, brand, cmodel, used, year, price)
+def self.pagesearch(page, order,brand,cmodel)
   paginate :per_page => 5, :page => page,
-	   :conditions => ['user_id like ? and brand like ? and carmodel like ? and used like ? and year >= ? and price <= ? ', "%#{me}%","%#{brand}%","%#{cmodel}%","%#{used}%",year,price],
+	   :conditions => ['brand like ? and carmodel like ?',"%#{brand}%","%#{cmodel}%"],
            :order => order
 end
 

@@ -2,21 +2,25 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-	if (params[:price] == nil  and params[:year] == nil)
-    @cars = Car.pagesearch(params[:car_page], params[:sort], params[:me] ,params[:brand], params[:cmodel], params[:used],  "1", "1000000000000")
-	elsif (params[:year] == nil)
-    @cars = Car.pagesearch(params[:car_page], params[:sort], params[:me] ,params[:brand], params[:cmodel], params[:used], "1", params[:price])
-	elsif (params[:price] == nil)
-    @cars = Car.pagesearch(params[:car_page], params[:sort], params[:me] ,params[:brand], params[:cmodel], params[:used],  params[:year], "1000000000000")
+    @year=1600
+    @price=6500000
+
+	if (params[:me])
+    @cars = Car.where("user_id = ?",params[:me]).pagesearch(params[:car_page], params[:sort], params[:brand], params[:cmodel])
 	else
-    @cars = Car.pagesearch(params[:car_page], params[:sort], params[:me] ,params[:brand], params[:cmodel], params[:used],  params[:year], params[:price])
+
+        if (params[:year] != nil)
+	@year=params[:year]
+	end
+
+        if (params[:price]!= nil)
+        @price=params[:price]
+        end
+        
+    @cars = Car.where("year >= ? and price <= ?",@year ,@price).pagesearch(params[:car_page], params[:sort], params[:brand], params[:cmodel])
 end
     @users = User.all
     @luser = current_user
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @cars }
-    end
 
 
   end
